@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 const Numbers = () => {
@@ -6,7 +7,7 @@ const Numbers = () => {
       {/* Vision Section */}
       <div className="vision-section">
         <Image
-          src="/fingerprint.png"
+          src="/public/image/fingerprint.png"
           alt="Fingerprint Scan"
           width={150}
           height={150}

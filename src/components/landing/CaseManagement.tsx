@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image"; // Using Next.js Image optimization
 
@@ -40,7 +41,7 @@ const CaseManagement: React.FC = () => {
         </div>
         <div className="image-container">
           <Image
-            src="/images/case-management.jpg" // Change this to your actual image path
+            src="/public/image/case-management.jpg" 
             alt="Case Management"
             width={500}
             height={400}

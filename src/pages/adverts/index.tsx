@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Events from "@/app/components/landing/Events";
-import Numbers from "@/app/components/landing/Numbers";
-import Partners from "@/app/components/landing/Partners";
+import Events from "@/components/landing/Events";
+import Numbers from "@/components/landing/Numbers";
+import Partners from "@/components/landing/Partners";
 
 export default function Home() {
   return (

@@ -1,10 +1,9 @@
-"use client";
+'use client';
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { partners } from "@/app/partners/partners-logos";
-
+import { partners } from "@/components/partners/partners-logos";
 
 
 interface Partner {
@@ -13,7 +12,7 @@ interface Partner {
   link: string;
 }
 
-const Partners = () => {
+const Partners: React.FC = () => {
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -31,7 +30,7 @@ const Partners = () => {
 
   return (
     <div className="partners-section">
-      <h2 className="partners-title">Our Partners</h2>
+      <h2 className="partners-title">Partners</h2>
       <Slider {...sliderSettings} className="partners-slider">
         {partners.map((partner: Partner, index: number) => (
           <div key={index} className="partner-slide">

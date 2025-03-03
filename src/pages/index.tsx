@@ -1,29 +1,22 @@
-import Head from "next/head";
-import Events from "@/app/components/landing/Events";
-import Numbers from "@/app/components/landing/Numbers";
-import Partners from "@/app/components/landing/Partners";
+import React from 'react';
+import CaseManagement from '@/components/landing/CaseManagement';
+import FAQS from '@/components/landing/FAQS';
+import Numbers from '@/components/landing/Numbers';
+import CorePillars from '@/components/landing/CorePillars';
+import Events from '@/components/landing/Events';
+import Partners from '@/components/landing/Partners';
+import PartnersLogos from '@/components/partners/partners-logos';
 
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>SwahiliPot Hub</title>
-        <meta name="description" content="Welcome to SwahiliPot Hub" />
-      </Head>
+const HomePage = () => (
+  <>
+    <CaseManagement />
+    <FAQS />
+    <Numbers />
+    <CorePillars />
+    <Events />
+    <Partners />
+    <PartnersLogos />
+  </>
+);
 
-      <main>
-        {/* Hero Section (if exists) */}
-        {/* <Hero /> */}
-
-        {/* Events Section */}
-        <Events />
-
-        {/* Numbers Section */}
-        <Numbers />
-
-        {/* Partners Section */}
-        <Partners />
-      </main>
-    </>
-  );
-}
+export default HomePage;

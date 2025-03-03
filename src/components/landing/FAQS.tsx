@@ -1,26 +1,26 @@
+"use client";
 import { useState } from "react";
 import Image from "next/image";
-import iconLookingForAnswers from "@/public/oc-looking-for-answers.svg"; // Update the path as needed
 
 const faqs = [
   {
     question: "What programs and services does SwahiliPot Hub offer?",
     answer:
-      "SwahiliPot Hub offers a range of programs and services, including training workshops, mentorship programs, networking events, access to co-working spaces, and maker labs. These initiatives aim to empower individuals by providing them with the necessary resources and skills to participate in the digital economy.",
+      "SwahiliPot Hub offers a range of programs and services, including training workshops, mentorship programs, networking events, access to co-working spaces, and maker labs. These initiatives empower individuals by providing them with the necessary resources and skills to participate in the digital economy.",
   },
   {
     question: "Who can benefit from SwahiliPot Hub?",
     answer:
-      "SwahiliPot Hub is open to entrepreneurs, developers, creatives, and anyone interested in technology and innovation. It caters to individuals who are looking to enhance their digital skills, collaborate on projects, and connect with like-minded individuals in the tech ecosystem.",
+      "SwahiliPot Hub is open to entrepreneurs, developers, creatives, and anyone interested in technology and innovation. It connects individuals looking to enhance their digital skills and collaborate on projects.",
   },
   {
     question: "Can I visit SwahiliPot Hub as a visitor?",
     answer:
-      "Yes, SwahiliPot Hub welcomes visitors who are interested in learning more about their initiatives and the local tech ecosystem. You can visit the hub to attend events, participate in workshops, or simply network with professionals in the field. SwahiliPot Hub promotes an inclusive and vibrant community where individuals can exchange ideas and explore opportunities in technology and innovation.",
+      "Yes, SwahiliPot Hub welcomes visitors interested in learning more about its initiatives. You can attend events, participate in workshops, or network with professionals in the tech and creative communities.",
   },
 ];
 
-const FAQs = () => {
+const FAQS = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -28,39 +28,39 @@ const FAQs = () => {
   };
 
   return (
-    <section className="max-w-2xl mx-auto py-10">
-      <h2 className="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h2>
-      <div className="space-y-4">
+    <section className="faqs-section">
+      <h2 className="faqs-title">Frequently Asked Questions</h2>
+      <div className="faqs-list">
         {faqs.map((faq, index) => (
-          <div key={index} className="border-b pb-4">
+          <div key={index} className="faq-item">
             <button
-              className="flex justify-between items-center w-full text-left font-semibold text-lg focus:outline-none"
+              className="faq-question"
               onClick={() => toggleFAQ(index)}
             >
               {faq.question}
-              <span className="text-xl">{openIndex === index ? "−" : "+"}</span>
+              <span className="faq-toggle">{openIndex === index ? "−" : "+"}</span>
             </button>
             {openIndex === index && (
-              <div className="mt-2 p-4 bg-blue-100 rounded">
-                <p className="text-gray-700">{faq.answer}</p>
+              <div className="faq-answer">
+                <p>{faq.answer}</p>
               </div>
             )}
           </div>
         ))}
       </div>
-
-      {/* Bottom Section with Icon */}
-      <div className="text-center mt-6">
-        <div className="flex justify-center">
-          <Image src={iconLookingForAnswers} alt="Looking for answers?" width={100} height={100} />
-        </div>
-        <p className="text-gray-600 mt-2">Still have questions?</p>
-        <a href="#" className="text-blue-600 font-semibold">
-          Contact our friendly support team &rarr;
-        </a>
+      <div className="faq-bottom">
+        {/* Use the absolute path for the image */}
+        <Image
+          src="/public/icons/oc-looking-for-answers.svg"
+          alt="Looking for answers?"
+          width={120}
+          height={120}
+        />
+        <p>Still have questions?</p>
+        <a href="#" className="faq-contact">Contact our friendly support team →</a>
       </div>
     </section>
   );
 };
 
-export default FAQs;
+export default FAQS;
