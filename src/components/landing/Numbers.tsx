@@ -7,7 +7,7 @@ const Numbers = () => {
       {/* Vision Section */}
       <div className="vision-section">
         <Image
-          src="/public/image/fingerprint.png"
+          src="/image/fingerprint.png.jpg"
           alt="Fingerprint Scan"
           width={150}
           height={150}

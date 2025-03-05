@@ -12,7 +12,7 @@ interface Partner {
   link: string;
 }
 
-const Partners: React.FC = () => {
+const Partners = () => {
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -29,13 +29,18 @@ const Partners: React.FC = () => {
   };
 
   return (
-    <div className="partners-section">
-      <h2 className="partners-title">Partners</h2>
+    <div className="partners-section py-10 bg-gray-100">
+      <h2 className="text-center text-2xl font-bold text-gray-800 mb-6">Our Partners</h2>
       <Slider {...sliderSettings} className="partners-slider">
         {partners.map((partner: Partner, index: number) => (
-          <div key={index} className="partner-slide">
+          <div key={index} className="flex justify-centre items-centre p-4">
             <a href={partner.link} target="_blank" rel="noopener noreferrer">
-              <img src={partner.logo} alt={partner.name} className="partner-logo" />
+              <img
+              src={partner.logo}
+              alt={partner.name}
+              className="w-40 h-auto object-contain transition-transform duration-300 hover:scale-110"
+              loading="lazy"
+            />
             </a>
           </div>
         ))}

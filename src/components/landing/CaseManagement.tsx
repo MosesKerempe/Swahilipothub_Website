@@ -1,70 +1,59 @@
-"use client";
-import React from "react";
-import Image from "next/image"; // Using Next.js Image optimization
+import Link from 'next/link';
 
-const CaseManagement: React.FC = () => {
+export default function CaseManagement() {
   return (
-    <div className="case-management">
-      {/* About Case Management Section */}
-      <section className="about-section">
-        <div className="about-header">
-          <h1>About Case Management</h1>
+    <section className="py-16 bg-light">
+      <div className="container-custom mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-6">Case Management Program</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Our Case Management Program provides personalized support to youth facing various challenges, connecting them with resources and opportunities to help them thrive.
+            </p>
+            <p className="text-lg text-gray-700 mb-8">
+              Through this program, we offer mentorship, counseling, skills development, and access to educational and employment opportunities tailored to individual needs.
+            </p>
+            <Link href="/programs/case-management" className="btn">
+              Learn More
+            </Link>
+          </div>
+          
+          <div className="bg-white p-8 rounded-lg shadow-md">
+            <div className="text-5xl text-primary mb-6">🤝</div>
+            <h3 className="text-2xl font-semibold mb-4">How We Help</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <span className="text-primary mr-3">✓</span>
+                <div>
+                  <h4 className="font-medium">Personalized Assessment</h4>
+                  <p className="text-gray-600">Understanding individual needs and challenges</p>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3">✓</span>
+                <div>
+                  <h4 className="font-medium">Resource Connection</h4>
+                  <p className="text-gray-600">Linking youth to relevant services and opportunities</p>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3">✓</span>
+                <div>
+                  <h4 className="font-medium">Skills Development</h4>
+                  <p className="text-gray-600">Training in both technical and soft skills</p>
+                </div>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3">✓</span>
+                <div>
+                  <h4 className="font-medium">Ongoing Support</h4>
+                  <p className="text-gray-600">Continuous mentorship and guidance</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div className="about-content">
-          <p>
-            At the Swahili Pot Hub Foundation (SPH), we are committed to making a
-            positive impact on the lives of young individuals in Mombasa County and
-            its six sub-counties. For the past seven years, we have been dedicated
-            to helping youth overcome challenges and thrive. Through strategic
-            partnerships with communities, government entities, CSOs, and local
-            leaders, SPH has been a beacon of hope for young people from diverse
-            backgrounds.
-          </p>
-          <h2>The Case Management Project: A Path to Empowerment</h2>
-          <p>
-            The primary objective of the Case Management Project is to connect
-            60,000 youth in Mombasa County and its sub-counties to a wide range of
-            opportunities and sustainable employment. We understand that each young
-            person is unique, and to empower them effectively, we emphasize a
-            personalized case management approach. This approach allows us to offer
-            customized support and guidance, helping young individuals access and
-            thrive in various educational, vocational, and entrepreneurial pathways.
-          </p>
-        </div>
-      </section>
-
-      {/* Case Management Hero Section */}
-      <section className="hero">
-        <div className="text-content">
-          <h1>Case Management</h1>
-          <p>Anyone, Anywhere</p>
-        </div>
-        <div className="image-container">
-          <Image
-            src="/public/image/case-management.jpg" 
-            alt="Case Management"
-            width={500}
-            height={400}
-            className="hero-image"
-          />
-        </div>
-      </section>
-
-      {/* Google Form Section */}
-      <div className="form-container">
-        <iframe
-          src="YOUR_GOOGLE_FORM_URL_HERE"
-          width="100%"
-          height="1200px"
-          frameBorder="0"
-          marginHeight={0}
-          marginWidth={0}
-        >
-          Loading…
-        </iframe>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default CaseManagement;
+}
